@@ -149,25 +149,20 @@ Please follow the readme instructions for local setup. The Udacity Virtual Machi
 ### Dataset
 #### Dataset analysis
 The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecord available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images from the tfrecord include:
-
-*(Rainy)*
-![obj6](https://user-images.githubusercontent.com/22205974/148433196-71afebd1-064c-4e8a-a67c-6d4c4975c1f1.PNG)
-*(Sunny)*
-![obj3](https://user-images.githubusercontent.com/22205974/148440152-59e9a62e-ff26-4c21-9664-fae2caa7576a.PNG)
-*(Night)*
-![obj2](https://user-images.githubusercontent.com/22205974/148436268-2f6b841e-640e-4d81-91df-f308e9c0f6c8.PNG)
-
-*(Low tracked class densities)*
-![obj4](https://user-images.githubusercontent.com/22205974/148440118-9c946687-fa07-45cd-837e-13b740099561.PNG)
-
-*(Med tracked class densities)*
-![obj7](https://user-images.githubusercontent.com/22205974/148440056-0b952f87-64aa-4066-be93-bfd3b3e827c3.PNG)
-
-*(High tracked class densities)*
-![obj8](https://user-images.githubusercontent.com/22205974/148439342-00718794-2b5a-4da7-8a3d-37ca2f5b5adc.PNG)
+![1](https://user-images.githubusercontent.com/22205974/149421898-077ca256-c614-447a-ae21-84eb239b15b9.PNG)
+![2](https://user-images.githubusercontent.com/22205974/149421930-f56b7ce1-ff41-417c-80a9-2898f4c22b12.PNG)
+![3](https://user-images.githubusercontent.com/22205974/149421951-fc012e54-a1e5-4db8-82b4-a69f05286b2e.PNG)
+![4](https://user-images.githubusercontent.com/22205974/149421965-553a2ba7-a8a4-462a-a6dd-b5b7666d2cf2.PNG)
+![5](https://user-images.githubusercontent.com/22205974/149421980-978a3123-1909-4ec4-aca3-0101f457d0d8.PNG)
+![6](https://user-images.githubusercontent.com/22205974/149421988-345f8246-1aa9-4f30-86ab-4f470eb30863.PNG)
+![7](https://user-images.githubusercontent.com/22205974/149421996-bbf23b21-0f15-4438-a54d-93517ecb7a6c.PNG)![8](https://user-images.githubusercontent.com/22205974/149422002-bc4fa1c1-ad16-421b-a0d2-4f43ca75fd37.PNG)
+![8](https://user-images.githubusercontent.com/22205974/149422026-4bc36fdf-697c-4818-85fc-a8cd29500450.PNG)
+![9](https://user-images.githubusercontent.com/22205974/149422058-f2e7325e-d055-47f6-bc43-fe5c13806091.PNG)
+![10](https://user-images.githubusercontent.com/22205974/149422066-9c52d2bf-ef8a-4f36-9c1a-35bf460166c2.PNG)
 
 
-The Single Shot Detector Model is an object detection algorithm that was used to train the Waymo Open Dataset. This model detected 3 classes from the dataset: vehicles, pedestrians, and cyclist. The frequency distribution of these classes are based on the analysis of 1000 and 10,000 shuffled images in the training dataset. In 1,000 images 76% of vehicles, 24% of pedestrians and less that 1% were cyclists were tracked. This produced very few shuffled images containing cyclists.
+The Single Shot
+ Detector Model is an object detection algorithm that was used to train the Waymo Open Dataset. This model detected 3 classes from the dataset: vehicles, pedestrians, and cyclist. The frequency distribution of these classes are based on the analysis of 1000 and 10,000 shuffled images in the training dataset. In 1,000 images 76% of vehicles, 24% of pedestrians and less that 1% were cyclists were tracked. This produced very few shuffled images containing cyclists.
 
 ![fd1000](https://user-images.githubusercontent.com/22205974/148423059-865c08dc-169a-41b8-9298-9fa36d5aa178.PNG)
 
@@ -203,19 +198,29 @@ Augmenting images improves the models performance.
 The following aumentations were applied:
 The image was flipped (random_horizontal_flip) This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
-![augflip](https://user-images.githubusercontent.com/22205974/148433919-03d39f1a-3023-4fd6-90c0-f493956e10e7.PNG)
+
 
 The image was converted into grayscale (random_rgb_to_gray) 0.02 probability. RGB images need 24 bits for processing while grayscale only needs 8bits to process. Grayscale provides faster processing times and helps with feature distinction.
 
-![grayaug](https://user-images.githubusercontent.com/22205974/148433944-a69bbeac-a30a-46f0-9bff-3241669e0251.PNG)
+
 
 The image was converted to adjust the brightness adjust by delta 0.3. Over exposure to light can make it harder for the model to distingush the objects features.
 
-![obj5](https://user-images.githubusercontent.com/22205974/148433969-c37d2749-0604-4b47-9f79-09df4dd7865c.PNG)
+
 
 The image was converted to adjust the contrast of the images to make it darker to train the model. Training the model with darker images can provide a better model for object  recognition in darker images.
 
-![aug1](https://user-images.githubusercontent.com/22205974/148454948-1aa0089b-9e6e-413a-8d47-9a00805d60ac.PNG)
 
 
+![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
 
+![aug2](https://user-images.githubusercontent.com/22205974/149422486-b610f83f-b51f-4078-97b6-14711a4ab240.PNG)
+
+![aug3](https://user-images.githubusercontent.com/22205974/149422503-0257b2d3-b2ae-4f62-8e16-80a61274a425.PNG)
+![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
+![aug5](https://user-images.githubusercontent.com/22205974/149422526-7b45c568-b458-4cbe-9a9d-fd07f98de7b9.PNG)
+![aug6](https://user-images.githubusercontent.com/22205974/149422535-eedf1769-fcd3-4fcd-b6d8-c07e3c1b0fce.PNG)
+![aug7](https://user-images.githubusercontent.com/22205974/149422550-321536ba-c66c-4cdc-a4f7-80822991bc10.PNG)
+![aug8](https://user-images.githubusercontent.com/22205974/149422564-026733eb-fcf9-4765-a5eb-246a9dd840f8.PNG)
+![aug9](https://user-images.githubusercontent.com/22205974/149422578-429c7d88-771f-47b4-aa49-297a75904ca4.PNG)
+![aug10](https://user-images.githubusercontent.com/22205974/149422594-59c84061-0624-4b34-ba0d-2f8bc96e9094.PNG)
