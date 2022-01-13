@@ -155,7 +155,8 @@ The Waymo Open Dataset was used to train a neural network model. The data within
 ![4](https://user-images.githubusercontent.com/22205974/149421965-553a2ba7-a8a4-462a-a6dd-b5b7666d2cf2.PNG)
 ![5](https://user-images.githubusercontent.com/22205974/149421980-978a3123-1909-4ec4-aca3-0101f457d0d8.PNG)
 ![6](https://user-images.githubusercontent.com/22205974/149421988-345f8246-1aa9-4f30-86ab-4f470eb30863.PNG)
-![7](https://user-images.githubusercontent.com/22205974/149421996-bbf23b21-0f15-4438-a54d-93517ecb7a6c.PNG)![8](https://user-images.githubusercontent.com/22205974/149422002-bc4fa1c1-ad16-421b-a0d2-4f43ca75fd37.PNG)
+![7](https://user-images.githubusercontent.com/22205974/149421996-bbf23b21-0f15-4438-a54d-93517ecb7a6c.PNG)
+![8](https://user-images.githubusercontent.com/22205974/149422002-bc4fa1c1-ad16-421b-a0d2-4f43ca75fd37.PNG)
 ![8](https://user-images.githubusercontent.com/22205974/149422026-4bc36fdf-697c-4818-85fc-a8cd29500450.PNG)
 ![9](https://user-images.githubusercontent.com/22205974/149422058-f2e7325e-d055-47f6-bc43-fe5c13806091.PNG)
 ![10](https://user-images.githubusercontent.com/22205974/149422066-9c52d2bf-ef8a-4f36-9c1a-35bf460166c2.PNG)
@@ -163,12 +164,10 @@ The Waymo Open Dataset was used to train a neural network model. The data within
 
 The Single Shot
  Detector Model is an object detection algorithm that was used to train the Waymo Open Dataset. This model detected 3 classes from the dataset: vehicles, pedestrians, and cyclist. The frequency distribution of these classes are based on the analysis of 1000 and 10,000 shuffled images in the training dataset. In 1,000 images 76% of vehicles, 24% of pedestrians and less that 1% were cyclists were tracked. This produced very few shuffled images containing cyclists.
-
-![fd1000](https://user-images.githubusercontent.com/22205974/148423059-865c08dc-169a-41b8-9298-9fa36d5aa178.PNG)
+![waymo1000](https://user-images.githubusercontent.com/22205974/149423493-73f41e24-476b-40db-a9b5-8b78cb387c5a.PNG)
 
 In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were tracked. This increseased the number of cyclists tracked from the dataset.
-
-![fd10000](https://user-images.githubusercontent.com/22205974/148423800-3efc61d5-0f4b-47ca-a478-73ad650e03e4.PNG)
+![waymo10000](https://user-images.githubusercontent.com/22205974/149423514-2443ea05-dc4f-437a-a48f-6e0428b38fca.PNG)
 
 
 #### Cross validation
@@ -176,41 +175,30 @@ In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were t
 
 ### Training
 #### Reference experiment
-The Single Shot Detector (SSD) Resnet 50 model was used to pretrain our dataset. Epoch help to visual overfitting. The learning rate, on the initial experiment resulted in a low learning rate
+The Single Shot Detector (SSD) Resnet 50 model was used to pretrain our dataset. The SSD model has two image augmentations present, random horizontal flip and random image crop. In the images below the training loss is highlighted in orange and the validation loss in blue. The training and validation loss for the reference model without adding any extra augmentations are displayed. A learning rate of .04, on the initial experiment resulted in a low learning rate. A learning rate that is rapidly decreased to a minimum value before increasing rapidly again is desired. After multiple training iterations the final training rate was set at 0.0001819
 
-![learnrate](https://user-images.githubusercontent.com/22205974/148449119-b4fc11e9-d4bf-4dbc-8313-4e5f704d107e.png)
+![1loss](https://user-images.githubusercontent.com/22205974/149424941-c1ad1bc4-fa6c-4578-a4db-5482c90d4ce6.PNG)
+![2loss](https://user-images.githubusercontent.com/22205974/149424946-421549f6-cbdb-4ac9-a3b0-77ab49caa8da.PNG)
+![3loss](https://user-images.githubusercontent.com/22205974/149424963-00b0cb00-5b9c-4e5c-9ae8-8a6bf3c20ea1.PNG)
+![4loss](https://user-images.githubusercontent.com/22205974/149424985-183aeaac-a773-45ff-bfad-70d7cd27a83e.PNG)
+![5loss](https://user-images.githubusercontent.com/22205974/149425140-4ef3778e-d146-45bd-bfc7-3c51971a7f6e.PNG)
 
-As the number of epochs increases the more the weights are changed in the neural network and goes from underfitting to an desired result or overfitting. 
-
-![cap1](https://user-images.githubusercontent.com/22205974/148436976-da0253d4-05b6-4f34-a628-cda022ad1568.PNG)
-![cap2](https://user-images.githubusercontent.com/22205974/148436998-034e2e3d-14c0-4b45-98f1-cb96f55bf6f3.PNG)
-![cap3](https://user-images.githubusercontent.com/22205974/148437017-89dc2b3c-9215-462f-b496-9b4907b05663.PNG)
-
-The model starts to over fit when the training set accuracy is increasing and the test set accuracy is decreasing.The models prediction, loss:0.1299, accuracy: 0.9505, val_loss: 0.4567 -val_accuracy:0.8974
-
-![epoch](https://user-images.githubusercontent.com/22205974/148437086-3808093e-93f5-4bfe-b496-0f690cd4d809.PNG)
+This model performs poorly on the training and validation dataset.
 
 
 
 #### Improve on the reference
-Augmenting images improves the models performance. 
+To improve object detection within the model: the learning rate can be increased or decreased, the training steps can be increased and augmentations can be added to the images. 
 
+#### Image Augmentations
 The following aumentations were applied:
 The image was flipped (random_horizontal_flip) This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
-
-
 The image was converted into grayscale (random_rgb_to_gray) 0.02 probability. RGB images need 24 bits for processing while grayscale only needs 8bits to process. Grayscale provides faster processing times and helps with feature distinction.
-
-
 
 The image was converted to adjust the brightness adjust by delta 0.3. Over exposure to light can make it harder for the model to distingush the objects features.
 
-
-
 The image was converted to adjust the contrast of the images to make it darker to train the model. Training the model with darker images can provide a better model for object  recognition in darker images.
-
-
 
 ![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
 
