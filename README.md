@@ -148,7 +148,7 @@ Please follow the readme instructions for local setup. The Udacity Virtual Machi
 
 ### Dataset
 #### Dataset analysis
-The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecord available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images from the tfrecord include:
+The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecords available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images from the tfrecord include:
 
 (Foggy)
 ![2](https://user-images.githubusercontent.com/22205974/149421930-f56b7ce1-ff41-417c-80a9-2898f4c22b12.PNG)
@@ -175,12 +175,13 @@ The Single Shot Detector Model is an object detection algorithm that was used to
 
 ![waymo1000](https://user-images.githubusercontent.com/22205974/149423493-73f41e24-476b-40db-a9b5-8b78cb387c5a.PNG)
 
-In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were tracked. This increseased the number of cyclists tracked from the dataset.
+In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were tracked. This increased the number of cyclists tracked from the dataset.
+
 ![waymo10000](https://user-images.githubusercontent.com/22205974/149423514-2443ea05-dc4f-437a-a48f-6e0428b38fca.PNG)
 
 
 #### Cross validation
-97 tfrecord files were split 85:15, 82 files for training and 15 files for validation. The testing file contains 3 tfrecord file preloaded into the Udacity workspace. In order to properly train the neural network the image were shuffled for cross validation. The create_splits.py shuffles the files before splitting the dataset. Shuffling the data helps the algorithm avoid any bias due to the order of the data was assembled. These bias would cause the algorithm, to visualize patterns read from the previous images that may not be in the following images and  this would cause overfitting.
+97 tfrecord files were split 85:15, 82 files for training and 15 files for validation. The testing file contains 3 tfrecord file preloaded into the Udacity workspace. In order to properly train the neural network the image were shuffled for cross validation. The create_splits.py shuffles the files before splitting the dataset. Shuffling the data helps the algorithm to avoid any bias, that would occur because of the order the data is assembled. These bias would cause the algorithm, to visualize patterns read from the previous images that may not be in the following images and this would cause overfitting.
 
 ### Training
 #### Reference experiment
