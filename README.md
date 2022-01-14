@@ -253,6 +253,7 @@ The following images are the loss metrics for experiment 2.
 ![alr1](https://user-images.githubusercontent.com/22205974/149428180-58f29b54-cddc-4297-bb05-8c6a320e7eb5.PNG)
 ![alr2](https://user-images.githubusercontent.com/22205974/149428198-5c7bb181-1d49-47bb-86e1-fd38379f3502.PNG)
 ![alr3](https://user-images.githubusercontent.com/22205974/149428211-5c5757c4-a498-4a6c-ad71-fc02410462fb.PNG)
+
 ![alr4](https://user-images.githubusercontent.com/22205974/149428218-5f251d54-fda4-4b13-8b8d-49007c3cf972.PNG)
 ![alr5](https://user-images.githubusercontent.com/22205974/149428224-567a2a92-a015-44b5-81a6-b699182c70b0.PNG)
 
