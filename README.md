@@ -208,16 +208,27 @@ The following aumentations were applied to the images below:
 The image was flipped (random_horizontal_flip): This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
 The image was randomly cropped using:
+
 }
+
   data_augmentation_options {
+  
     random_crop_image {
+    
       min_object_covered: 0.0
+      
       min_aspect_ratio: 0.75
+      
       max_aspect_ratio: 3.0
+      
       min_area: 0.75
+      
       max_area: 1.0
+      
       overlap_thresh: 0.0
+      
     }
+    
 
 The image was converted into grayscale (random_rgb_to_gray) 0.02 probability. RGB images need 24 bits for processing while grayscale only needs 8bits to process. Grayscale provides faster processing times and helps with feature distinction.
 
@@ -238,6 +249,7 @@ The image was converted to adjust the contrast of the images to make it darker t
 
 #### Adjust Learning Rate
 The following images are the loss metrics for experiment 2.
+
 ![alr1](https://user-images.githubusercontent.com/22205974/149428180-58f29b54-cddc-4297-bb05-8c6a320e7eb5.PNG)
 ![alr2](https://user-images.githubusercontent.com/22205974/149428198-5c7bb181-1d49-47bb-86e1-fd38379f3502.PNG)
 ![alr3](https://user-images.githubusercontent.com/22205974/149428211-5c5757c4-a498-4a6c-ad71-fc02410462fb.PNG)
