@@ -256,7 +256,7 @@ The image was augmented to the contrast. Training the model with darker images c
 
 
 #### Adjust Learning Rate
-The following images are the loss metrics for experiment 2.
+The following images are the loss metrics for experiment 2. The final training rate was set at 0.0001819.This model performs the best in detecting the density of tracked vehicles in the dataset.
 
 ![alr1](https://user-images.githubusercontent.com/22205974/149428180-58f29b54-cddc-4297-bb05-8c6a320e7eb5.PNG)
 ![alr2](https://user-images.githubusercontent.com/22205974/149428198-5c7bb181-1d49-47bb-86e1-fd38379f3502.PNG)
@@ -265,6 +265,6 @@ The following images are the loss metrics for experiment 2.
 ![alr4](https://user-images.githubusercontent.com/22205974/149428218-5f251d54-fda4-4b13-8b8d-49007c3cf972.PNG)
 ![alr5](https://user-images.githubusercontent.com/22205974/149428224-567a2a92-a015-44b5-81a6-b699182c70b0.PNG)
 
-This model performs the best in detecting the density of tracked vehicles in the dataset. The mean average precision for large boxes in the figure below is 0.5 and reduces to approximately .2 for small tracked objects. The adjusted learning rate for the augmented model is displayed in the image below. This model performs considerably better than the first model and is evident by the loss metrics. The model tracks vehicles in a variety of weather conditions and augmentations. The dataset is unbalanced with a multitude of vehicles present, while providing less datapoints for pedestrians and cyclists. The dataset under performs in detecting the pedestrian and cyclist class. The model can be trained better to track all classes if the classes to be track provide a better balance.
+The mean average precision for large boxes in the figure below is 0.5 and reduces to approximately .2 for small tracked objects. The adjusted learning rate for the augmented model is displayed in the image below. This model performs considerably better than the first model and is evident by the loss metrics. The model tracks vehicles in a variety of weather conditions and augmentations. The dataset is unbalanced with a multitude of vehicles present, while providing less datapoints for pedestrians and cyclists. The dataset under performs in detecting the pedestrian and cyclist class. The model can be trained better to track all classes if the classes to be track provide a better balance.
 
 ![exp_2_map](https://user-images.githubusercontent.com/22205974/149428911-2a311624-f194-4710-8347-bf6c1536b8b7.png)
