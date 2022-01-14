@@ -148,7 +148,7 @@ Please follow the readme instructions for local setup. The Udacity Virtual Machi
 
 ### Dataset
 #### Dataset analysis
-The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecords available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images from the tfrecord include:
+The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecords available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images (EDA.ipynb) from the tfrecord include:
 
 (Foggy)
 ![2](https://user-images.githubusercontent.com/22205974/149421930-f56b7ce1-ff41-417c-80a9-2898f4c22b12.PNG)
@@ -205,7 +205,7 @@ To improve object detection within the model: the learning rate can be increased
 
 
 #### Image Augmentations
-The following aumentations were applied to the images below:
+The following visualizations for augmentations are in EDA2.py.
 
 The image was flipped (random_horizontal_flip): This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
