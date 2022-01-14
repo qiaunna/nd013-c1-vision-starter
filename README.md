@@ -149,10 +149,20 @@ Please follow the readme instructions for local setup. The Udacity Virtual Machi
 ### Dataset
 #### Dataset analysis
 The Waymo Open Dataset was used to train a neural network model. The data within the Udacity classroom has 97 tfrecord available for training. These tfrecord files contain 1 frame per 10 seconds from a 10fps video. These images are annotated bounding boxes for 3 classes (vehicles, pedestrian, cyclists). The images from the tfrecord include:
+
+(Sunny)
 ![1](https://user-images.githubusercontent.com/22205974/149421898-077ca256-c614-447a-ae21-84eb239b15b9.PNG)
+
+(Foggy)
 ![2](https://user-images.githubusercontent.com/22205974/149421930-f56b7ce1-ff41-417c-80a9-2898f4c22b12.PNG)
+
+(Image noise/blurry)
 ![3](https://user-images.githubusercontent.com/22205974/149421951-fc012e54-a1e5-4db8-82b4-a69f05286b2e.PNG)
+
+(Night)
 ![4](https://user-images.githubusercontent.com/22205974/149421965-553a2ba7-a8a4-462a-a6dd-b5b7666d2cf2.PNG)
+
+(Good weather conditions)
 ![5](https://user-images.githubusercontent.com/22205974/149421980-978a3123-1909-4ec4-aca3-0101f457d0d8.PNG)
 ![6](https://user-images.githubusercontent.com/22205974/149421988-345f8246-1aa9-4f30-86ab-4f470eb30863.PNG)
 ![7](https://user-images.githubusercontent.com/22205974/149421996-bbf23b21-0f15-4438-a54d-93517ecb7a6c.PNG)
@@ -162,8 +172,8 @@ The Waymo Open Dataset was used to train a neural network model. The data within
 ![10](https://user-images.githubusercontent.com/22205974/149422066-9c52d2bf-ef8a-4f36-9c1a-35bf460166c2.PNG)
 
 
-The Single Shot
- Detector Model is an object detection algorithm that was used to train the Waymo Open Dataset. This model detected 3 classes from the dataset: vehicles, pedestrians, and cyclist. The frequency distribution of these classes are based on the analysis of 1000 and 10,000 shuffled images in the training dataset. In 1,000 images 76% of vehicles, 24% of pedestrians and less that 1% were cyclists were tracked. This produced very few shuffled images containing cyclists.
+The Single Shot Detector Model is an object detection algorithm that was used to train the Waymo Open Dataset. This model detected 3 classes from the dataset: vehicles, pedestrians, and cyclist. The frequency distribution of these classes are based on the analysis of 1000 and 10,000 shuffled images in the training dataset. In 1,000 images 76% of vehicles, 24% of pedestrians and less that 1% were cyclists were tracked. This produced very few shuffled images containing cyclists.
+
 ![waymo1000](https://user-images.githubusercontent.com/22205974/149423493-73f41e24-476b-40db-a9b5-8b78cb387c5a.PNG)
 
 In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were tracked. This increseased the number of cyclists tracked from the dataset.
@@ -218,8 +228,8 @@ The image was converted to adjust the contrast of the images to make it darker t
 ![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
 ![aug2](https://user-images.githubusercontent.com/22205974/149422486-b610f83f-b51f-4078-97b6-14711a4ab240.PNG)
 ![aug3](https://user-images.githubusercontent.com/22205974/149422503-0257b2d3-b2ae-4f62-8e16-80a61274a425.PNG)
-![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
 ![aug5](https://user-images.githubusercontent.com/22205974/149422526-7b45c568-b458-4cbe-9a9d-fd07f98de7b9.PNG)
+![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
 ![aug6](https://user-images.githubusercontent.com/22205974/149422535-eedf1769-fcd3-4fcd-b6d8-c07e3c1b0fce.PNG)
 ![aug7](https://user-images.githubusercontent.com/22205974/149422550-321536ba-c66c-4cdc-a4f7-80822991bc10.PNG)
 ![aug8](https://user-images.githubusercontent.com/22205974/149422564-026733eb-fcf9-4765-a5eb-246a9dd840f8.PNG)
