@@ -199,7 +199,7 @@ This model performs poorly on the training and validation dataset.
 
 
 #### Improve on the reference
-To improve object detection within the model: the learning rate can be increased or decreased, the training steps can be increased and augmentations can be added to the images. 
+To improve object detection within the model: the learning rate can be increased or decreased, the training steps can be increased and augmentations can be added to the images. A new version of the config file is created (pipeline_new.config) and contains modifications to improve the model performances.
 
 
 #### Image Augmentations
