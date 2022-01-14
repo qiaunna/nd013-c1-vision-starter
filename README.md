@@ -206,6 +206,8 @@ The following aumentations were applied to the images below:
 
 The image was flipped (random_horizontal_flip): This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
+![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
+
 The image was randomly cropped using:
 
 }
@@ -228,22 +230,23 @@ The image was randomly cropped using:
       
     }
     
+    ![aug2](https://user-images.githubusercontent.com/22205974/149422486-b610f83f-b51f-4078-97b6-14711a4ab240.PNG)
+    
+    
 
 The image was converted into grayscale (random_rgb_to_gray) 0.03 probability. RGB images need 24 bits for processing while grayscale only needs 8bits to process. Grayscale provides faster processing times and helps with feature distinction.
 
-The image was augmented to adjust the brightness by delta 0.3. Over exposure to light can make it harder for the model to distingush the objects features.
-
-The image was augmented to the contrast. Training the model with darker images can provide a better model for object recognition in darker images.
-
-![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
-![aug2](https://user-images.githubusercontent.com/22205974/149422486-b610f83f-b51f-4078-97b6-14711a4ab240.PNG)
 ![aug3](https://user-images.githubusercontent.com/22205974/149422503-0257b2d3-b2ae-4f62-8e16-80a61274a425.PNG)
 ![aug5](https://user-images.githubusercontent.com/22205974/149422526-7b45c568-b458-4cbe-9a9d-fd07f98de7b9.PNG)
 ![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
+
+The image was augmented to adjust the brightness by delta 0.3. Over exposure to light can make it harder for the model to distingush the objects features.
+![aug9](https://user-images.githubusercontent.com/22205974/149422578-429c7d88-771f-47b4-aa49-297a75904ca4.PNG)
+
+The image was augmented to the contrast. Training the model with darker images can provide a better model for object recognition in darker images.
+![aug8](https://user-images.githubusercontent.com/22205974/149422564-026733eb-fcf9-4765-a5eb-246a9dd840f8.PNG)
 ![aug6](https://user-images.githubusercontent.com/22205974/149422535-eedf1769-fcd3-4fcd-b6d8-c07e3c1b0fce.PNG)
 ![aug7](https://user-images.githubusercontent.com/22205974/149422550-321536ba-c66c-4cdc-a4f7-80822991bc10.PNG)
-![aug8](https://user-images.githubusercontent.com/22205974/149422564-026733eb-fcf9-4765-a5eb-246a9dd840f8.PNG)
-![aug9](https://user-images.githubusercontent.com/22205974/149422578-429c7d88-771f-47b4-aa49-297a75904ca4.PNG)
 ![aug10](https://user-images.githubusercontent.com/22205974/149422594-59c84061-0624-4b34-ba0d-2f8bc96e9094.PNG)
 
 #### Adjust Learning Rate
