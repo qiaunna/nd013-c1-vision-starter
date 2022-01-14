@@ -177,11 +177,13 @@ In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were t
 #### Reference experiment
 The Single Shot Detector (SSD) Resnet 50 model was used to pretrain our dataset. The SSD model has two image augmentations present, random horizontal flip and random image crop. In the images below the training loss is highlighted in orange and the validation loss in blue. The training and validation loss for the reference model without adding any extra augmentations are displayed. A learning rate of .04, on the initial experiment resulted in a low learning rate. A learning rate that is rapidly decreased to a minimum value before increasing rapidly again is desired. After multiple training iterations the final training rate was set at 0.0001819.
 
+
 ![1loss](https://user-images.githubusercontent.com/22205974/149424941-c1ad1bc4-fa6c-4578-a4db-5482c90d4ce6.PNG)
 ![2loss](https://user-images.githubusercontent.com/22205974/149424946-421549f6-cbdb-4ac9-a3b0-77ab49caa8da.PNG)
 ![3loss](https://user-images.githubusercontent.com/22205974/149424963-00b0cb00-5b9c-4e5c-9ae8-8a6bf3c20ea1.PNG)
 ![4loss](https://user-images.githubusercontent.com/22205974/149424985-183aeaac-a773-45ff-bfad-70d7cd27a83e.PNG)
 ![5loss](https://user-images.githubusercontent.com/22205974/149425140-4ef3778e-d146-45bd-bfc7-3c51971a7f6e.PNG)
+
 
 This model performs poorly on the training and validation dataset.
 
@@ -191,8 +193,21 @@ To improve object detection within the model: the learning rate can be increased
 
 
 #### Image Augmentations
-The following aumentations were applied:
-The image was flipped (random_horizontal_flip) This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
+The following aumentations were applied to the images below:
+
+The image was flipped (random_horizontal_flip): This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
+
+The image was randomly cropped using:
+}
+  data_augmentation_options {
+    random_crop_image {
+      min_object_covered: 0.0
+      min_aspect_ratio: 0.75
+      max_aspect_ratio: 3.0
+      min_area: 0.75
+      max_area: 1.0
+      overlap_thresh: 0.0
+    }
 
 The image was converted into grayscale (random_rgb_to_gray) 0.02 probability. RGB images need 24 bits for processing while grayscale only needs 8bits to process. Grayscale provides faster processing times and helps with feature distinction.
 
@@ -201,9 +216,7 @@ The image was converted to adjust the brightness adjust by delta 0.3. Over expos
 The image was converted to adjust the contrast of the images to make it darker to train the model. Training the model with darker images can provide a better model for object recognition in darker images.
 
 ![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
-
 ![aug2](https://user-images.githubusercontent.com/22205974/149422486-b610f83f-b51f-4078-97b6-14711a4ab240.PNG)
-
 ![aug3](https://user-images.githubusercontent.com/22205974/149422503-0257b2d3-b2ae-4f62-8e16-80a61274a425.PNG)
 ![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
 ![aug5](https://user-images.githubusercontent.com/22205974/149422526-7b45c568-b458-4cbe-9a9d-fd07f98de7b9.PNG)
@@ -220,6 +233,7 @@ The following images are the loss metrics for experiment 2.
 ![alr3](https://user-images.githubusercontent.com/22205974/149428211-5c5757c4-a498-4a6c-ad71-fc02410462fb.PNG)
 ![alr4](https://user-images.githubusercontent.com/22205974/149428218-5f251d54-fda4-4b13-8b8d-49007c3cf972.PNG)
 ![alr5](https://user-images.githubusercontent.com/22205974/149428224-567a2a92-a015-44b5-81a6-b699182c70b0.PNG)
-This model performs the best in detecting the density of tracked vehicles in the dataset. The mean average precision for large boxes in the figure below is 0.5 and reduces to approximately .2 for small tracked objects.
-The adjusted learning rate for the augmented model is displayed in the image below. This model performs considerably better than the first model and is evident by the loss metrics. The model tracks vehicles in a variety of weather conditions and augmentations. The dataset is unbalanced with a multitude of vehicles present, while providing less datapoints for pedestrians and cyclists. The dataset under performs in detecting the pedestrian and cyclist class. The model can be trained better to track all classes if the classes to be track provide a better balance.
+
+This model performs the best in detecting the density of tracked vehicles in the dataset. The mean average precision for large boxes in the figure below is 0.5 and reduces to approximately .2 for small tracked objects. The adjusted learning rate for the augmented model is displayed in the image below. This model performs considerably better than the first model and is evident by the loss metrics. The model tracks vehicles in a variety of weather conditions and augmentations. The dataset is unbalanced with a multitude of vehicles present, while providing less datapoints for pedestrians and cyclists. The dataset under performs in detecting the pedestrian and cyclist class. The model can be trained better to track all classes if the classes to be track provide a better balance.
+
 ![exp_2_map](https://user-images.githubusercontent.com/22205974/149428911-2a311624-f194-4710-8347-bf6c1536b8b7.png)
