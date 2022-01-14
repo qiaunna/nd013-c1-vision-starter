@@ -207,6 +207,7 @@ The following aumentations were applied to the images below:
 The image was flipped (random_horizontal_flip): This presents a mirrored image that helps to train the model to recognize objects in the opposite direction.
 
 ![aug1](https://user-images.githubusercontent.com/22205974/149422482-e5528a26-fd91-495e-bacf-bc847fa214a1.PNG)
+![aug10](https://user-images.githubusercontent.com/22205974/149422594-59c84061-0624-4b34-ba0d-2f8bc96e9094.PNG)
 
 The image was randomly cropped using:
 
@@ -241,13 +242,15 @@ The image was converted into grayscale (random_rgb_to_gray) 0.03 probability. RG
 ![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
 
 The image was augmented to adjust the brightness by delta 0.3. Over exposure to light can make it harder for the model to distingush the objects features.
+
 ![aug9](https://user-images.githubusercontent.com/22205974/149422578-429c7d88-771f-47b4-aa49-297a75904ca4.PNG)
+![aug6](https://user-images.githubusercontent.com/22205974/149422535-eedf1769-fcd3-4fcd-b6d8-c07e3c1b0fce.PNG)
 
 The image was augmented to the contrast. Training the model with darker images can provide a better model for object recognition in darker images.
+
 ![aug8](https://user-images.githubusercontent.com/22205974/149422564-026733eb-fcf9-4765-a5eb-246a9dd840f8.PNG)
-![aug6](https://user-images.githubusercontent.com/22205974/149422535-eedf1769-fcd3-4fcd-b6d8-c07e3c1b0fce.PNG)
 ![aug7](https://user-images.githubusercontent.com/22205974/149422550-321536ba-c66c-4cdc-a4f7-80822991bc10.PNG)
-![aug10](https://user-images.githubusercontent.com/22205974/149422594-59c84061-0624-4b34-ba0d-2f8bc96e9094.PNG)
+
 
 #### Adjust Learning Rate
 The following images are the loss metrics for experiment 2.
