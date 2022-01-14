@@ -164,10 +164,13 @@ The Waymo Open Dataset was used to train a neural network model. The data within
 
 (Good weather conditions)
 ![5](https://user-images.githubusercontent.com/22205974/149421980-978a3123-1909-4ec4-aca3-0101f457d0d8.PNG)
-![6](https://user-images.githubusercontent.com/22205974/149421988-345f8246-1aa9-4f30-86ab-4f470eb30863.PNG)
 ![7](https://user-images.githubusercontent.com/22205974/149421996-bbf23b21-0f15-4438-a54d-93517ecb7a6c.PNG)
 ![8](https://user-images.githubusercontent.com/22205974/149422002-bc4fa1c1-ad16-421b-a0d2-4f43ca75fd37.PNG)
-![8](https://user-images.githubusercontent.com/22205974/149422026-4bc36fdf-697c-4818-85fc-a8cd29500450.PNG)
+
+(Multi-Classes tracked)
+![6](https://user-images.githubusercontent.com/22205974/149421988-345f8246-1aa9-4f30-86ab-4f470eb30863.PNG)
+
+
 ![9](https://user-images.githubusercontent.com/22205974/149422058-f2e7325e-d055-47f6-bc43-fe5c13806091.PNG)
 ![10](https://user-images.githubusercontent.com/22205974/149422066-9c52d2bf-ef8a-4f36-9c1a-35bf460166c2.PNG)
 
