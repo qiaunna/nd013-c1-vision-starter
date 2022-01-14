@@ -184,7 +184,11 @@ In 10,000 images 75% of vehicles, 24% of pedestrians and 1% were cyclists were t
 
 ### Training
 #### Reference experiment
-The Single Shot Detector (SSD) Resnet 50 model was used to pretrain our dataset. The SSD model has two image augmentations present, random horizontal flip and random image crop. In the images below the training loss is highlighted in orange and the validation loss in blue. The training and validation loss for the reference model without adding any extra augmentations are displayed. A learning rate of .04, on the initial experiment resulted in a low learning rate. A learning rate that is rapidly decreased to a minimum value before increasing rapidly again is desired. After multiple training iterations the final training rate was set at 0.0001819.
+The Single Shot Detector (SSD) Resnet 50 model was used to pretrain our dataset. The SSD model has two image augmentations present, random horizontal flip and random image crop. The tensorboard image below is a side by side tracking validation at 2500 steps.
+
+![aug4](https://user-images.githubusercontent.com/22205974/149422512-0227197c-3a91-4984-a2ac-5ab1047b694a.PNG)
+
+In the images below the training loss is highlighted in orange and the validation loss in blue. The training and validation loss for the reference model without adding any extra augmentations are displayed. A learning rate of .04, on the initial experiment resulted in a low learning rate. A learning rate that is rapidly decreased to a minimum value before increasing rapidly again is desired. After multiple training iterations the final training rate was set at 0.0001819.
 
 
 ![1loss](https://user-images.githubusercontent.com/22205974/149424941-c1ad1bc4-fa6c-4578-a4db-5482c90d4ce6.PNG)
